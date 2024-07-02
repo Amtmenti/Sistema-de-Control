@@ -1,0 +1,77 @@
+{% extends 'body.html' %}
+{% load static %}
+{% block assets %}
+    <script src="{% static 'lib/highcharts-9.1.1/highcharts.js' %}" type="text/javascript"></script>
+    <script src="{% static 'lib/highcharts-9.1.1/highcharts-3d.js' %}" type="text/javascript"></script>
+    <script src="{% static 'lib/highcharts-9.1.1/modules/exporting.js' %}" type="text/javascript"></script>
+    <script src="{% static 'lib/highcharts-9.1.1/modules/data.js' %}" type="text/javascript"></script>
+    <script src="{% static 'lib/highcharts-9.1.1/modules/drilldown.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+{% block breadcrumb_item %}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid welcome-container">
+        <h1 class="text-center mt-4">¡Bienvenido al Panel informativo {{ user.names }}!</h1>
+    </div>
+
+    <div class="container-fluid p-0">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card p-4">
+                    <h4 class="font-weight-bold text-center mb-3">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i> 10 últimas entradas registradas
+                    </h4>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Número</th>
+                            <th scope="col">Alumno</th>
+                            <th scope="col">Fecha de registro</th>
+                            <th scope="col">Hora Entrada</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for registroentrada in registroentradas %}
+                            <tr>
+                                <td>{{ registroentrada.id }}</td>
+                                <td>{{ registroentrada.alumno.nombre_completo }}</td>
+                                <td>{{ registroentrada.fecha }}</td>
+                                <td>{{ registroentrada.hora_entrada }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <h4 class="font-weight-bold text-center mb-3">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i> 10 últimas salidas registradas
+                    </h4>
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Número</th>
+                            <th scope="col">Alumno</th>
+                            <th scope="col">Fecha de registro</th>
+                            <th scope="col">Hora Salida</th>
+                            <th scope="col">Actividad</th>
+                            <th scope="col">Horas totales</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for registrosalida in registrosalidas %}
+                            <tr>
+                                <td>{{ registrosalida.id }}</td>
+                                <td>{{ registrosalida.alumno.nombre_completo }}</td>
+                                <td>{{ registrosalida.fecha }}</td>
+                                <td>{{ registrosalida.hora_salida }}</td>
+                                <td>{{ registrosalida.descripcion_actividad }}</td>
+                                <td>{{ registrosalida.total_horas }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

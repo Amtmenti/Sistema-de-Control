@@ -1,0 +1,15 @@
+{% extends 'list.html' %}
+{% load static %}
+
+{% block assets_list %}
+    <script src="{% static 'registrocombinado/js/list.js' %}"></script>
+{% endblock %}
+
+{% block columns %}
+    <th>Alumno</th>
+    <th>Hora Entrada</th>
+    <th>Hora Salida</th>
+    <th>Fecha</th>
+    <th>Descripción de la Actividad</th>
+    <th>Tiempo Total</th>
+{% endblock %}

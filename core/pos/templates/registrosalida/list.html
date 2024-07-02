@@ -1,0 +1,15 @@
+{% extends 'list.html' %}
+{% load static %}
+{% block assets_list %}
+    <script src="{% static 'registrosalida/js/list.js' %}"></script>
+{% endblock %}
+
+{% block columns %}
+    <th>Id</th>
+    <th>Alumno</th>
+    <th>Hora Salida</th>
+    <th>Fecha</th>
+    <th>Descripción de la Actividad</th> <!-- Ajustado -->
+    <th>Tiempo Total</th>
+    <th>Opciones</th>
+{% endblock %}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Actividad Asignada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .email-container {
+            background-color: #ffffff;
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 600px;
+            border: 1px solid #dddddd;
+        }
+        .header {
+            background-color: #007bff; /* Color azul */
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .footer {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>Nueva Actividad Asignada</h1>
+        </div>
+        <div class="content">
+            <p>Hola, {{ alumno.nombre_completo }},</p>
+            <p>Se te ha asignado la siguiente actividad para desarrollar:</p>
+            <p><strong>Actividad:</strong> {{ actividad.nombre }}</p>
+            <p><strong>Descripción:</strong> {{ actividad.descripcion }}</p>
+            <p><strong>Actividad enviada el:</strong> {{ actividad.created_at }}</p>
+            <p>En caso de dudas, acercate con un miembro del Departamento del Centro de Computo.</p>
+            <p>Saludos, {{ user.names }}</p>
+        </div>
+        <div class="footer">
+            <p>&copy; {{ current_year }} Centro de Computo.</p>
+        </div>
+    </div>
+</body>
+</html>

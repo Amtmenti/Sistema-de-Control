@@ -1,0 +1,19 @@
+{% extends 'list.html' %}
+{% load static %}
+{% block assets_list %}
+    <script src="{% static 'alumno/js/list.js' %}"></script>
+{% endblock %}
+
+{% block columns %}
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Teléfono</th>
+    <th>Email</th>
+    <th>Inicio</th>
+    <th>Término</th>
+    <th>Token</th>
+    <th>Duración</th>
+    <th>Horas Cumplidas</th>
+    <th>Horas Restantes</th>
+    <th>Opciones</th>
+{% endblock %}
